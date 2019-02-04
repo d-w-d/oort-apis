@@ -6,9 +6,17 @@ export class ZtfRepo {
         // get Employee repository and find all employees
         return getManager()
             .getRepository(ztf)
-            .find({
-                take: 20
-            });
+            .find(
+                //
+                {
+                    //
+                    // select: ['obsdate'],
+                    take: 50
+                }
+            );
+        //     {
+        //     take: 20
+        // }
     }
 
     // saveEmployee(employee: EmployeeEntity) {

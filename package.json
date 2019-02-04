@@ -27,7 +27,7 @@
     "scripts": {
         "dev": "npm run clean && node_modules/typescript/bin/tsc --watch --sourceMap & nodemon dist/app.js",
         "clean": "rimraf dist",
-        "build": "node_modules/typescript/bin/tsc",
+        "build": "npm run clean && node_modules/typescript/bin/tsc",
         "serve": "npm run build && NODE_ENV='PROD' node_modules/.bin/pm2 start dist/app.js",
         "stop": "node_modules/.bin/pm2 stop all",
         "restart": "npm run stop && npm run serve",

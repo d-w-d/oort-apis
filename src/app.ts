@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('port', process.env.PORT || 3000);
 
 // Primary app routes
-import * as objController from './controllers/_obj-controller';
+import * as objController from './controllers/obj-controller';
 import * as ztfController from './controllers/ztf-controller';
 import * as testController from './controllers/_test-controller';
 

@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
-import { ObjRepo } from '../repositories/_obj-repository';
+import { ObjRepo } from '../repositories/obj-repository';
 import { ZtfRepo } from '../repositories/ztf-repository';
 
-export let getAllZTFs = async (req: Request, res: Response) => {
-    let ztfRepo: ZtfRepo = new ZtfRepo();
+export let getAllObjs = async (req: Request, res: Response) => {
+    let objRepo: ObjRepo = new ObjRepo();
 
     console.log('Querying ZTF...');
 
     // res.send('Received Get Employee Request..');
-    ztfRepo.getAllObjects().then((result: any) => {
+    objRepo.getAllObjects().then((result: any) => {
         console.log('Result : ' + result);
         res.send(result);
     });
