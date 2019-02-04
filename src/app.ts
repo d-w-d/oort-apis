@@ -21,6 +21,7 @@ app.get('/GetAllObjs', objController.getAllObjs);
 app.get('/test', testController.getTestRoute);
 app.get('test2', testController.getTestRoute2);
 app.get('/cccc', testController.getTestRouteCCCC);
+app.get('/*', testController.getTestRouteAll);
 
 // Connect to DB
 createConnection(appConfig.dbOptions)
