@@ -1,12 +1,9 @@
 import { Request, Response } from 'express';
-import { EmployeeRepo } from '../repositories/employee-repository';
-import { EmployeeEntity } from '../entities/employee-entity';
-import { ObjRepo } from '../repositories/obj-repository';
+import { ObjRepo } from '../repositories/_obj-repository';
+import { ZtfRepo } from '../repositories/ztf-repository';
 
-export let getAllObjs = async (req: Request, res: Response) => {
+export let getAllZTFs = async (req: Request, res: Response) => {
     let objRepo: ObjRepo = new ObjRepo();
-
-    console.log('Received GetAllEmployees ==> GET');
 
     // res.send('Received Get Employee Request..');
     objRepo.getAllObjects().then((result: any) => {

@@ -1,13 +1,14 @@
-import { EmployeeEntity } from '../entities/employee-entity';
 import { getManager } from 'typeorm';
-import { ObjEntity } from '../entities/obj-entity';
+import { ztf } from '../entities/ztf';
 
-export class ObjRepo {
+export class ZtfRepo {
     getAllObjects() {
         // get Employee repository and find all employees
         return getManager()
-            .getRepository(ObjEntity)
-            .find();
+            .getRepository(ztf)
+            .find({
+                take: 20
+            });
     }
 
     // saveEmployee(employee: EmployeeEntity) {

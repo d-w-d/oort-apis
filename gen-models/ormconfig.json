@@ -1,0 +1,16 @@
+[
+  {
+    "name": "default",
+    "type": "mysql",
+    "host": "musforti.astro.umd.edu",
+    "port": 3306,
+    "username": "ddarg",
+    "password": "DevS3&",
+    "database": "survey",
+    "schema": "public",
+    "synchronize": false,
+    "entities": [
+      "entities/*.js"
+    ]
+  }
+]

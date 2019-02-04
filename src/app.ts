@@ -11,13 +11,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set('port', process.env.PORT || 3000);
 
 // Primary app routes
-import * as empController from './controllers/employee-controller';
-import * as objController from './controllers/obj-controller';
-import * as testController from './controllers/test-controller';
+import * as objController from './controllers/_obj-controller';
+import * as ztfController from './controllers/ztf-controller';
+import * as testController from './controllers/_test-controller';
 
-app.get('/GetAllEmployees', empController.getAllEmployees);
-app.post('/SaveEmployee', empController.saveEmployee);
-app.get('/GetAllObjs', objController.getAllObjs);
+app.get('/getAllObjs', objController.getAllObjs);
+app.get('/getAllZTFs', ztfController.getAllZTFs);
 app.get('/test', testController.getTestRoute);
 app.get('test2', testController.getTestRoute2);
 app.get('/cccc', testController.getTestRouteCCCC);
