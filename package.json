@@ -3,13 +3,6 @@
     "version": "1.0.0",
     "description": "APIs for SBN projects",
     "main": "index.js",
-    "scripts": {
-        "dev": "npm run clean && node_modules/typescript/bin/tsc --watch --sourceMap & nodemon dist/app.js",
-        "clean": "rimraf dist",
-        "build": "node_modules/typescript/bin/tsc",
-        "serve": "npm run build && NODE_ENV='PROD' node_modules/.bin/pm2 start dist/app.js",
-        "stop": "node_modules/.bin/pm2 stop all"
-    },
     "repository": {
         "type": "git",
         "url": ""
@@ -17,18 +10,27 @@
     "author": "DWD",
     "license": "MIT",
     "dependencies": {
-        "body-parser": "^1.18.2",
-        "express": "^4.15.5",
-        "mysql": "^2.14.1",
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4",
+        "mysql": "^2.16.0",
         "pm2": "^3.2.9",
-        "reflect-metadata": "^0.1.10",
+        "reflect-metadata": "^0.1.13",
         "rimraf": "^2.6.3",
-        "typeorm": "^0.1.16"
+        "typeorm": "^0.2.12"
     },
     "devDependencies": {
-        "@types/body-parser": "^1.16.5",
-        "@types/express": "^4.0.37",
-        "@types/node": "^9.4.7",
+        "@types/body-parser": "^1.17.0",
+        "@types/express": "^4.16.1",
+        "@types/node": "^9.6.41",
         "typescript": "^3.3.1"
+    },
+    "scripts": {
+        "dev": "npm run clean && node_modules/typescript/bin/tsc --watch --sourceMap & nodemon dist/app.js",
+        "clean": "rimraf dist",
+        "build": "node_modules/typescript/bin/tsc",
+        "serve": "npm run build && NODE_ENV='PROD' node_modules/.bin/pm2 start dist/app.js",
+        "stop": "node_modules/.bin/pm2 stop all",
+        "restart": "npm run stop && npm run serve",
+        "pm2": "node_modules/.bin/pm2"
     }
 }
